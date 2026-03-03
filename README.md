@@ -4,8 +4,6 @@
 
 MovieKhoj is a modern web application that provides instant AI-powered audience sentiment insights for movies using IMDb IDs. Simply enter an IMDb ID and get comprehensive movie information along with intelligent sentiment analysis of audience reviews.
 
-![MovieKhoj Demo](https://via.placeholder.com/800x400/040816/6366f1?text=MovieKhoj+Demo)
-
 ## ✨ Features
 
 - **🔍 IMDb ID Search**: Enter any IMDb ID to get instant movie insights
@@ -14,11 +12,6 @@ MovieKhoj is a modern web application that provides instant AI-powered audience 
 - **🎨 Beautiful UI**: Modern, responsive design with animated components
 - **⚡ Health Check System**: Smart backend wake-up for Render hosting
 - **📱 Mobile Responsive**: Optimized for all device sizes
-
-## 🚀 Live Demo
-
-- **Frontend**: [https://moviekhoj-frontendd.onrender.com](https://moviekhoj-frontendd.onrender.com)
-- **Backend API**: [https://moviekhoj-backend.onrender.com](https://moviekhoj-backend.onrender.com)
 
 ## 🛠️ Tech Stack
 
@@ -95,10 +88,6 @@ cd frontend
 npm run dev
 ```
 
-The application will be available at:
-- Frontend: `http://localhost:5173`
-- Backend: `http://localhost:5000`
-
 ### 5. Production Build
 
 **Backend:**
@@ -136,25 +125,6 @@ npm run preview
 TMDB_API_KEY=your_tmdb_api_key
 GEMINI_API_KEY=your_gemini_api_key
 PORT=5000
-```
-
-## 📚 API Documentation
-
-### Health Check
-```http
-GET /api/health
-```
-Returns backend status and uptime information.
-
-### Movie Insights
-```http
-GET /api/movie/insight/:imdbId
-```
-Get comprehensive movie data with AI sentiment analysis.
-
-**Example:**
-```bash
-curl https://moviekhoj-backend.onrender.com/api/movie/insight/tt0133093
 ```
 
 ### Movie Comments
@@ -228,42 +198,3 @@ Content-Type: application/json
 - **Rate Limiting**: API rate limits may affect high-traffic usage
 - **Cache**: No caching implemented - each request hits external APIs
 
-### Future Enhancements
-- [ ] TV series support with episode-level analysis
-- [ ] Multi-language sentiment analysis
-- [ ] Caching layer for improved performance
-- [ ] User authentication and favorites
-- [ ] Batch processing for multiple movies
-- [ ] Advanced filtering and search options
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [TMDB](https://www.themoviedb.org/) for movie data
-- [Google Gemini AI](https://ai.google.dev/) for sentiment analysis
-- [Render](https://render.com/) for hosting
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [React](https://react.dev/) for the frontend framework
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](../../issues) page
-2. Create a new issue with detailed information
-3. Include error messages and steps to reproduce
-
----
-
-**Made with ❤️ for movie enthusiasts**
