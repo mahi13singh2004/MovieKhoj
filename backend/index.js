@@ -11,7 +11,19 @@ app.use(cors({ origin: "https://moviekhoj-frontendd.onrender.com", credentials: 
 app.use(express.json());
 
 app.get("/api/health", (req, res) => {
-    res.json({ status: "OK", timestamp: new Date().toISOString() });
+    res.json({
+        status: "OK",
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        service: "MovieKhoj Backend"
+    });
+});
+
+app.get("/api/wake", (req, res) => {
+    res.json({
+        message: "Backend is awake!",
+        timestamp: new Date().toISOString()
+    });
 });
 
 app.use("/api/movie", movieRoute);

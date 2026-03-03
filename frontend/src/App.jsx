@@ -1,11 +1,18 @@
+import { useState } from "react";
 import { useMovieStore } from "./store/movie.store";
 import SearchBar from "./components/SearchBar";
 import MovieCard from "./components/MovieCard";
 import SkeletonLoader from "./components/SkeletonLoader";
 import StarBackground from "./components/StarBackground";
+import HealthCheck from "./components/HealthCheck";
 
 export default function App() {
     const { movie, loading, error } = useMovieStore();
+    const [backendReady, setBackendReady] = useState(false);
+
+    if (!backendReady) {
+        return <HealthCheck onHealthy={() => setBackendReady(true)} />;
+    }
 
     return (
         <div className="relative h-screen bg-[#040816] overflow-hidden"

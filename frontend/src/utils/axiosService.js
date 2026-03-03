@@ -5,6 +5,19 @@ const axiosInstance = axios.create({
     withCredentials: true
 });
 
+// Health check function
+export const checkBackendHealth = async () => {
+    try {
+        const response = await axiosInstance.get("/api/health", { timeout: 10000 });
+        return { isHealthy: true, data: response.data };
+    } catch (error) {
+        return {
+            isHealthy: false,
+            error: error.message || "Backend is not responding"
+        };
+    }
+};
+
 axiosInstance.interceptors.request.use(
     (config) => {
         return config;
