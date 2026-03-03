@@ -6,7 +6,7 @@ dotenv.config();
 export const findImdbId = async (movieName, year) => {
     try {
         const { data } = await axios.post(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
             { contents: [{ parts: [{ text: `Find the IMDb ID for "${movieName}" ${year ? `from ${year}` : ''}. Return ONLY the IMDb ID like "tt1234567" or "NOT_FOUND".` }] }] }
         );
 
@@ -35,7 +35,7 @@ Reviews:
 ${reviewsText.substring(0, 1500)}`;
 
         const { data } = await axios.post(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
             { contents: [{ parts: [{ text: prompt }] }] }
         );
 
